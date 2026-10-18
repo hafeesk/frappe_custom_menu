@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-08 12:55:00.000000",
+ "description": "An edited sidebar menu (from the pencil in the sidebar header).",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "menu_key",
+  "for_user",
+  "menu_title",
+  "section_entries",
+  "entries"
+ ],
+ "fields": [
+  {
+   "fieldname": "menu_key",
+   "fieldtype": "Data",
+   "label": "Menu",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Dock icon key (workspace name, or group:<Desktop Icon>) or ws:<Workspace> for a sub-workspace menu. Set by the sidebar editor."
+  },
+  {
+   "fieldname": "for_user",
+   "fieldtype": "Link",
+   "label": "For user",
+   "options": "User",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Empty: the shared menu (System Manager). Set: only this user's menu."
+  },
+  {
+   "fieldname": "menu_title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_entries",
+   "fieldtype": "Section Break",
+   "label": "Entries",
+   "description": "Replaces the automatic menu. Every link is still checked against the user's permissions."
+  },
+  {
+   "fieldname": "entries",
+   "fieldtype": "Table",
+   "label": "Entries",
+   "options": "Dock Menu Layout Entry"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-09 09:54:35.665704",
+ "modified_by": "Administrator",
+ "module": "Dock Menu",
+ "name": "Dock Menu Layout",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "menu_title",
+ "track_changes": 1
+}

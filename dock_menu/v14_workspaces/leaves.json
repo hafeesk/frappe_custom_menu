@@ -1,0 +1,191 @@
+{
+ "name": "Leaves",
+ "title": "Leaves",
+ "module": "HR",
+ "icon": "non-profit",
+ "hide_custom": 0,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Leave Application",
+   "type": "DocType",
+   "link_to": "Leave Application",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
+   "format": "{} Open"
+  },
+  {
+   "label": "Leave Allocation",
+   "type": "DocType",
+   "link_to": "Leave Allocation",
+   "doc_view": "List",
+   "color": "Grey"
+  }
+ ],
+ "links": [
+  {
+   "label": "Setup",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 5
+  },
+  {
+   "label": "Holiday List",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Holiday List",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Period",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Period",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Policy",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Policy",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Block List",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Block List",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Allocation",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Leave Allocation",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Allocation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Policy Assignment",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Policy Assignment",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leave Encashment",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Encashment",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Application",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Leave Application",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Application",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Compensatory Leave Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Compensatory Leave Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Employee Leave Balance",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Leave Balance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Leave Balance Summary",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Leave Balance Summary",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employees working on a holiday",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employees working on a holiday",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": []
+}

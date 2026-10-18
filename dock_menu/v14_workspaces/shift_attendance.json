@@ -1,0 +1,216 @@
+{
+ "name": "Shift & Attendance",
+ "title": "Shift & Attendance",
+ "module": "HR",
+ "icon": "milestone",
+ "hide_custom": 1,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Attendance",
+   "type": "DocType",
+   "link_to": "Attendance",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Dashboard",
+   "type": "Dashboard",
+   "link_to": "Attendance",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Employee Checkin",
+   "type": "DocType",
+   "link_to": "Employee Checkin",
+   "doc_view": "List",
+   "color": "Green",
+   "format": "{} "
+  },
+  {
+   "label": "Shift Request",
+   "type": "DocType",
+   "link_to": "Shift Request",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
+   "format": "{} Pending"
+  }
+ ],
+ "links": [
+  {
+   "label": "Shifts",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Shift Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Shift Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Shift Assignment",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Shift Assignment",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Shift Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Shift Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Attendance",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 5
+  },
+  {
+   "label": "Attendance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Attendance",
+   "hidden": 0,
+   "onboard": 1,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Attendance Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Attendance Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Checkin",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Checkin",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Attendance Tool",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Attendance Tool",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Upload Attendance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Upload Attendance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Time",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Timesheet",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Timesheet",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Activity Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Activity Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Monthly Attendance Sheet",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Monthly Attendance Sheet",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Hours Utilization Based On Timesheet",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Hours Utilization Based On Timesheet",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Project Profitability",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Project Profitability",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employees working on a holiday",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employees working on a holiday",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": []
+}

@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-07 12:00:00.000000",
+ "description": "One icon in the dock. Its sidebar comes from the Workspace Sidebar (or the Workspace's cards and shortcuts).",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["label", "sequence", "disabled", "column_break_a", "workspace", "sidebar", "section_look", "icon", "abbr", "column_break_b", "color", "image", "section_roles", "roles"],
+ "fields": [
+  {"fieldname": "label", "fieldtype": "Data", "in_list_view": 1, "label": "Label", "reqd": 1},
+  {"default": "10", "fieldname": "sequence", "fieldtype": "Int", "in_list_view": 1, "label": "Sequence", "description": "Lower comes first"},
+  {"default": "0", "fieldname": "disabled", "fieldtype": "Check", "in_list_view": 1, "label": "Disabled"},
+  {"fieldname": "column_break_a", "fieldtype": "Column Break"},
+  {"fieldname": "workspace", "fieldtype": "Link", "in_list_view": 1, "label": "Workspace", "options": "Workspace", "description": "Opened when the icon is clicked; also hides the icon from users who cannot open it"},
+  {"fieldname": "sidebar", "fieldtype": "Link", "label": "Workspace Sidebar", "options": "Workspace Sidebar", "description": "Menu shown in the sidebar. Empty = the sidebar named like the workspace, else the workspace's cards"},
+  {"fieldname": "section_look", "fieldtype": "Section Break", "label": "Look"},
+  {"fieldname": "icon", "fieldtype": "Data", "label": "Icon", "description": "Frappe / Lucide icon name, e.g. arrow-left-right, landmark, package"},
+  {"fieldname": "abbr", "fieldtype": "Data", "label": "Letters", "length": 3, "description": "Shown instead of an icon, e.g. OI"},
+  {"fieldname": "column_break_b", "fieldtype": "Column Break"},
+  {"fieldname": "color", "fieldtype": "Color", "label": "Color"},
+  {"fieldname": "image", "fieldtype": "Attach Image", "label": "Image"},
+  {"fieldname": "section_roles", "fieldtype": "Section Break", "label": "Visible To"},
+  {"fieldname": "roles", "fieldtype": "Table MultiSelect", "label": "Roles", "options": "Dock Menu Role", "description": "Empty = everyone who can open the workspace"}
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-10-07 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dock Menu",
+ "name": "Dock Menu Item",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1}
+ ],
+ "sort_field": "sequence",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "label",
+ "track_changes": 1
+}

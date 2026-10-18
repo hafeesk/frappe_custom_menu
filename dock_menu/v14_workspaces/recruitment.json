@@ -1,0 +1,218 @@
+{
+ "name": "Recruitment",
+ "title": "Recruitment",
+ "module": "HR",
+ "icon": "users",
+ "hide_custom": 0,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Dashboard",
+   "type": "Dashboard",
+   "link_to": "Recruitment",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Job Applicant",
+   "type": "DocType",
+   "link_to": "Job Applicant",
+   "doc_view": "List",
+   "color": "Red",
+   "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
+   "format": "{} Open"
+  },
+  {
+   "label": "Job Opening",
+   "type": "DocType",
+   "link_to": "Job Opening",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
+   "format": "{} Open"
+  },
+  {
+   "label": "Job Offer",
+   "type": "DocType",
+   "link_to": "Job Offer",
+   "doc_view": "List",
+   "color": "Green",
+   "stats_filter": "{\"status\":[\"=\",\"Accepted\"]}",
+   "format": "{} Accepted"
+  }
+ ],
+ "links": [
+  {
+   "label": "Interviews",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Interview Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Interview Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Interview Round",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Interview Round",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Interview",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Interview",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Interview Type, Interview Round",
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Interview Feedback",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Interview Feedback",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Interview",
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Appointment",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Appointment Letter Template",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Appointment Letter Template",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Appointment Letter",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Appointment Letter",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Job Applicant",
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 1
+  },
+  {
+   "label": "Recruitment Analytics",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Recruitment Analytics",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Jobs",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 6
+  },
+  {
+   "label": "Staffing Plan",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Staffing Plan",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Job Requisition",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Job Requisition",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Job Opening",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Job Opening",
+   "hidden": 0,
+   "onboard": 1,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Job Applicant",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Job Applicant",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Job Offer",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Job Offer",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Referral",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Referral",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": [
+  {
+   "label": "Interviews (This Week)",
+   "document_type": "Interview",
+   "quick_list_filter": "{\"scheduled_on\":[\"Timespan\",\"this week\"],\"docstatus\":[\"!=\",\"2\"]}"
+  }
+ ]
+}

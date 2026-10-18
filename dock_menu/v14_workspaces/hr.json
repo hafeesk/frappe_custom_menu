@@ -1,0 +1,427 @@
+{
+ "name": "HR",
+ "title": "HR",
+ "module": "HR",
+ "icon": "hr",
+ "hide_custom": 0,
+ "parent_page": "",
+ "shortcuts": [
+  {
+   "label": "HR Dashboard",
+   "type": "Dashboard",
+   "link_to": "Human Resource",
+   "stats_filter": "{\n    \"status\": \"Open\"\n}",
+   "format": "{} Open"
+  },
+  {
+   "label": "Leave Application",
+   "type": "DocType",
+   "link_to": "Leave Application",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Employee",
+   "type": "DocType",
+   "link_to": "Employee",
+   "color": "Green",
+   "stats_filter": "{\"status\":\"Active\"}",
+   "format": "{} Active"
+  },
+  {
+   "label": "Expense Claims Dashboard",
+   "type": "Dashboard",
+   "link_to": "Expense Claims",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Recruitment Dashboard",
+   "type": "Dashboard",
+   "link_to": "Recruitment",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Employee Lifecycle Dashboard",
+   "type": "Dashboard",
+   "link_to": "Employee Lifecycle",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Attendance Dashboard",
+   "type": "Dashboard",
+   "link_to": "Attendance",
+   "doc_view": "List",
+   "color": "Grey"
+  }
+ ],
+ "links": [
+  {
+   "label": "Settings",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "HR Settings",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "HR Settings",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Daily Work Summary Group",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Daily Work Summary Group",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Team Updates",
+   "type": "Link",
+   "link_type": "Page",
+   "link_to": "team-updates",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Employee",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Group",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Group",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Grade",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Grade",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Key Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 7
+  },
+  {
+   "label": "Monthly Attendance Sheet",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Monthly Attendance Sheet",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Attendance",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Recruitment Analytics",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Recruitment Analytics",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Staffing Plan",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Analytics",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Analytics",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Leave Balance",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Leave Balance",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Leave Balance Summary",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Leave Balance Summary",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Advance Summary",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Advance Summary",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee Advance",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Exits",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Exits",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Other Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Employee Information",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Information",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Birthday",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Birthday",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employees Working on a Holiday",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employees working on a holiday",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Employee",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Daily Work Summary Replies",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Daily Work Summary Replies",
+   "hidden": 0,
+   "onboard": 0,
+   "dependencies": "Daily Work Summary",
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Setup",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Company",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Company",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Branch",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Branch",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Department",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Department",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Designation",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Designation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Leaves",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Leave Application",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Leave Application",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Compensatory Leave Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Compensatory Leave Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Attendance",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Attendance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Attendance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Attendance Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Attendance Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Checkin",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Checkin",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Expense Claim",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Expense Claim",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Expense Claim",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Advance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Advance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Travel Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Travel Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": []
+}

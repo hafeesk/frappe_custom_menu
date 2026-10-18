@@ -1,0 +1,339 @@
+{
+ "name": "Employee Lifecycle",
+ "title": "Employee Lifecycle",
+ "module": "HR",
+ "icon": "assign",
+ "hide_custom": 0,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Dashboard",
+   "type": "Dashboard",
+   "link_to": "Employee Lifecycle",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Employee Onboarding",
+   "type": "DocType",
+   "link_to": "Employee Onboarding",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"boarding_status\":[\"=\",\"Pending\"]}",
+   "format": "{} Pending"
+  },
+  {
+   "label": "Employee Separation",
+   "type": "DocType",
+   "link_to": "Employee Separation",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"boarding_status\":[\"=\",\"Pending\"]}",
+   "format": "{} Pending"
+  },
+  {
+   "label": "Employee Grievance",
+   "type": "DocType",
+   "link_to": "Employee Grievance",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
+   "format": "{} Open"
+  }
+ ],
+ "links": [
+  {
+   "label": "Onboarding",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Employee Onboarding Template",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Onboarding Template",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Onboarding",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Onboarding",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Skill Map",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Skill Map",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Journey",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Employee Promotion",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Promotion",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Transfer",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Transfer",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Grievance",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Grievance Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Grievance Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Grievance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Grievance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Exit",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Employee Separation Template",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Separation Template",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Separation",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Separation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Full and Final Settlement",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Full and Final Statement",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Exit Interview",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Exit Interview",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Training",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Training Program",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Training Program",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Training Event",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Training Event",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Training Feedback",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Training Feedback",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Training Result",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Training Result",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Daily Work Summary",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Daily Work Summary",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Daily Work Summary",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Daily Work Summary Group",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Daily Work Summary Group",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Daily Work Summary Replies",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Daily Work Summary Replies",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Employee Exits",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Exits",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Birthday",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Birthday",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Information",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Information",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Analytics",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Analytics",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": [
+  {
+   "label": "New Hires (This Month)",
+   "document_type": "Employee",
+   "quick_list_filter": "{\"date_of_joining\":[\"Timespan\",\"this month\"]}"
+  },
+  {
+   "label": "Trainings (This Week)",
+   "document_type": "Training Event",
+   "quick_list_filter": "{\"start_time\":[\"Timespan\",\"this week\"]}"
+  },
+  {
+   "label": "Exits (This Month)",
+   "document_type": "Employee",
+   "quick_list_filter": "{\"relieving_date\":[\"Timespan\",\"this month\"]}"
+  }
+ ]
+}

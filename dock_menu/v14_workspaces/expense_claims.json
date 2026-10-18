@@ -1,0 +1,276 @@
+{
+ "name": "Expense Claims",
+ "title": "Expense Claims",
+ "module": "HR",
+ "icon": "expenses",
+ "hide_custom": 1,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Dashboard",
+   "type": "Dashboard",
+   "link_to": "Expense Claims",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Employee Advance",
+   "type": "DocType",
+   "link_to": "Employee Advance",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Paid\"]}",
+   "format": "{} Unclaimed"
+  },
+  {
+   "label": "Expense Claim",
+   "type": "DocType",
+   "link_to": "Expense Claim",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
+   "format": "{} Pending"
+  }
+ ],
+ "links": [
+  {
+   "label": "Claims",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Expense Claim",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Expense Claim",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Expense Claim Type",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Expense Claim Type",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Travel",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 2
+  },
+  {
+   "label": "Travel Request",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Travel Request",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Purpose of Travel",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Purpose of Travel",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Advances",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Employee Advance",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Advance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Payment Entry",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Payment Entry",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Journal Entry",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Journal Entry",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Additional Salary",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Additional Salary",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Employee Advance Summary",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Employee Advance Summary",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Unpaid Expense Claim",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Unpaid Expense Claim",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Vehicle Expenses",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Vehicle Expenses",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Accounting Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Accounts Receivable",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Accounts Receivable",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Accounts Payable",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Accounts Payable",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "General Ledger",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "General Ledger",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  },
+  {
+   "label": "Fleet Management",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 5
+  },
+  {
+   "label": "Vehicle",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Vehicle",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Driver",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Driver",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Vehicle Service Item",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Vehicle Service Item",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Vehicle Log",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Vehicle Log",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Vehicle Expenses",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Vehicle Expenses",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": []
+}

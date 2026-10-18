@@ -1,0 +1,196 @@
+{
+ "name": "Performance",
+ "title": "Performance",
+ "module": "HR",
+ "icon": "star",
+ "hide_custom": 0,
+ "parent_page": "HR",
+ "shortcuts": [
+  {
+   "label": "Appraisal",
+   "type": "DocType",
+   "link_to": "Appraisal",
+   "doc_view": "List",
+   "color": "Orange",
+   "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
+   "format": "{} Pending"
+  },
+  {
+   "label": "Employee Performance Feedback",
+   "type": "DocType",
+   "link_to": "Employee Performance Feedback",
+   "doc_view": "List",
+   "color": "Grey"
+  },
+  {
+   "label": "Goal",
+   "type": "DocType",
+   "link_to": "Goal",
+   "doc_view": "List",
+   "color": "Grey"
+  }
+ ],
+ "links": [
+  {
+   "label": "Energy Points",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Energy Point Rule",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Energy Point Rule",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Energy Point Settings",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Energy Point Settings",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Energy Point Log",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Energy Point Log",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Promotion",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 1
+  },
+  {
+   "label": "Employee Promotion",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Promotion",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Masters",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 3
+  },
+  {
+   "label": "Appraisal Template",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Appraisal Template",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "KRA",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "KRA",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Feedback Criteria",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Feedback Criteria",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Appraisal",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 4
+  },
+  {
+   "label": "Appraisal",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Appraisal",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Appraisal Cycle",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Appraisal Cycle",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Employee Performance Feedback",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Employee Performance Feedback",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Goal",
+   "type": "Link",
+   "link_type": "DocType",
+   "link_to": "Goal",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 0
+  },
+  {
+   "label": "Reports",
+   "type": "Card Break",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "link_count": 1
+  },
+  {
+   "label": "Appraisal Overview",
+   "type": "Link",
+   "link_type": "Report",
+   "link_to": "Appraisal Overview",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "link_count": 0
+  }
+ ],
+ "quick_lists": []
+}

@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "creation": "2026-10-07 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "apply_to_system_managers",
+  "edit_access",
+  "menu_style",
+  "open_workspace_on_desk",
+  "landing_page",
+  "home_route",
+  "column_break_a",
+  "subtitle",
+  "dock_limit",
+  "click_opens",
+  "section_tools",
+  "show_search",
+  "show_full_width",
+  "show_notifications",
+  "column_break_b",
+  "show_todo"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "default": "1",
+   "fieldname": "apply_to_system_managers",
+   "fieldtype": "Check",
+   "label": "Also for System Managers",
+   "description": "Off = System Managers keep the standard sidebar"
+  },
+  {
+   "fieldname": "edit_access",
+   "fieldtype": "Select",
+   "label": "Who can edit menus",
+   "options": "All users\nSystem Managers",
+   "default": "All users",
+   "description": "Each user's edits change only their own menu. System Managers can also save a shared menu for everyone."
+  },
+  {
+   "default": "Workspaces (v14)",
+   "fieldname": "menu_style",
+   "fieldtype": "Select",
+   "label": "Menu style",
+   "options": "Workspaces (v14)\nWorkspace Sidebar (v16)",
+   "description": "Workspaces (v14): dock icons and sidebar items chosen with Frappe v14's rules (workspace list, roles, modules, domains; shortcuts, quick lists and link cards the user may open), and the desk opens the last visited workspace after login. Workspace Sidebar (v16): the v16 Workspace Sidebar menus."
+  },
+  {
+   "fieldname": "open_workspace_on_desk",
+   "fieldtype": "Check",
+   "default": "1",
+   "label": "Open workspace menu instead of the apps page",
+   "description": "After login and from the Home icon, open the last used workspace (else the first one) with its sidebar menu, instead of the v16 apps grid."
+  },
+  {
+   "fieldname": "landing_page",
+   "fieldtype": "Select",
+   "label": "Desk opens",
+   "default": "Home page",
+   "options": "Home page\nLast used workspace",
+   "depends_on": "open_workspace_on_desk",
+   "description": "Home page: greeting, search, recent pages and a card per workspace the user may open (/desk/dock-home)."
+  },
+  {
+   "default": "/desk",
+   "fieldname": "home_route",
+   "fieldtype": "Data",
+   "label": "Home icon opens",
+   "description": "e.g. /desk or /desk/role-desk"
+  },
+  {
+   "fieldname": "column_break_a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Company Abbreviation",
+   "fieldname": "subtitle",
+   "fieldtype": "Select",
+   "label": "Sidebar subtitle",
+   "options": "Company Abbreviation\nCompany\nNone"
+  },
+  {
+   "default": "10",
+   "fieldname": "dock_limit",
+   "fieldtype": "Int",
+   "label": "Icons before \"More\""
+  },
+  {
+   "default": "Workspace page",
+   "fieldname": "click_opens",
+   "fieldtype": "Select",
+   "label": "Dock icon opens",
+   "options": "Workspace page\nFirst menu link\nMenu only"
+  },
+  {
+   "fieldname": "section_tools",
+   "fieldtype": "Section Break",
+   "label": "Dock tools"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_search",
+   "fieldtype": "Check",
+   "label": "Search"
+  },
+  {
+   "fieldname": "show_full_width",
+   "fieldtype": "Check",
+   "default": "1",
+   "label": "Toggle full width"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_notifications",
+   "fieldtype": "Check",
+   "label": "Notifications"
+  },
+  {
+   "fieldname": "column_break_b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_todo",
+   "fieldtype": "Check",
+   "label": "ToDo"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-09 09:55:01.808679",
+ "modified_by": "Administrator",
+ "module": "Dock Menu",
+ "name": "Dock Menu Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,21 @@
+[project]
+name = "dock_menu"
+authors = [{ name = "VKR Holdings" }]
+description = "Role-based icon dock + sectioned sidebar menu for Frappe v16"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0-dev,<17.0.0"
+
+[tool.setuptools.dynamic]
+version = { attr = "dock_menu.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["dock_menu*"]

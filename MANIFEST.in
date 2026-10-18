@@ -1,0 +1,2 @@
+recursive-include dock_menu *.py *.js *.css *.json *.txt *.md *.html
+include README.md license.txt
