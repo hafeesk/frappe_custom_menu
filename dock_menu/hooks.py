@@ -14,8 +14,8 @@ app_include_css = ["dock_menu.bundle.css"]
 boot_session = "dock_menu.api.extend_bootinfo"
 
 # /desk opens the dock Home page (site default desktop:home_page)
-after_migrate = ["dock_menu.api.sync_home_default"]
-after_install = ["dock_menu.api.sync_home_default"]
+after_migrate = ["dock_menu.api.sync_home_default", "dock_menu.api.load_app_workspaces"]
+after_install = ["dock_menu.api.sync_home_default", "dock_menu.api.load_app_workspaces"]
 
 # the v16 apps page ("desktop") sends dock users to the Home page / their workspace
 page_js = {"desktop": "public/js/desktop_redirect.js"}

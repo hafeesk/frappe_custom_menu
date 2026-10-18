@@ -34,6 +34,7 @@ DOC_VIEW_PATH = {
 	"Kanban": "view/kanban",
 }
 V14 = "Workspaces (v14)"
+APP_MODULE = "Dock Menu"  # workspaces shipped with this app (Operations) are shown by their links, not the module
 DEFAULTS = {
 	"enabled": 1,
 	"menu_style": V14,
@@ -930,7 +931,7 @@ def _v14_scan() -> list[dict]:
 				reason = f"domain {w.restrict_to_domain} not active"
 			elif w.get("module") and w.module in blocked:
 				reason = f"module {w.module} blocked for user"
-			elif w.get("module") and w.module in doctype_modules and w.module not in allow_modules:
+			elif w.get("module") and w.module != APP_MODULE and w.module in doctype_modules and w.module not in allow_modules:
 				reason = f"module {w.module}: user cannot read any of its DocTypes"
 			elif need and not (need & roles):
 				reason = "needs role: " + ", ".join(sorted(need))
@@ -945,7 +946,8 @@ def _v14_scan() -> list[dict]:
 		w["shown"] = not reason
 		w["reason"] = reason
 		# no DocTypes to judge the module by: shown only if the user can open something on it
-		w["nav_module"] = int(bool(w.get("module")) and w.get("module") not in doctype_modules and not has_access)
+		w["nav_module"] = int(bool(w.get("module")) and (w.get("module") not in doctype_modules or w.get("module") == APP_MODULE)
+			and not has_access)
 		out.append(w)
 	return out
 
@@ -2075,7 +2077,12 @@ def get_workspace_layout(workspace: str):
 	import html
 	import re
 
-	if not workspace or workspace not in _allowed_workspaces():
+	if not workspace or not frappe.db.exists("Workspace", workspace):
+		return {}
+	ws = _allowed_workspaces().get(workspace)
+	if not ws and _is_v14():
+		ws = next((w for w in _v14_pages() if w["name"] == workspace and not w.get("container")), None)
+	if not ws:
 		return {}
 	doc = frappe.get_doc("Workspace", workspace)
 	try:
@@ -2085,7 +2092,7 @@ def get_workspace_layout(workspace: str):
 	# a dashboard page (charts / number cards / custom blocks, no link cards) opens as it is
 	kinds = {b.get("type") for b in content}
 	if kinds & {"chart", "number_card", "custom_block"} and "card" not in kinds:
-		return {"dashboard": 1, "route": _ws_route(_allowed_workspaces()[workspace])}
+		return {"dashboard": 1, "route": _ws_route(ws)}
 	order, heads, head, cards_head = {}, {}, None, None
 	for b in content:
 		t, d = b.get("type"), b.get("data") or {}
@@ -2126,3 +2133,17 @@ def get_workspace_layout(workspace: str):
 		return {}
 	return {"title": _(doc.get("title") or doc.name), "blocks": shortcuts + cards,
 		"cards_head": _(cards_head) if cards_head else None}
+
+
+def load_app_workspaces():
+	"""after_install / after_migrate: (re)load the workspaces shipped with this app (Operations)."""
+	folder = os.path.join(os.path.dirname(__file__), "dock_menu", "workspace")
+	if not os.path.isdir(folder):
+		return
+	for name in sorted(os.listdir(folder)):
+		if os.path.isfile(os.path.join(folder, name, name + ".json")):
+			try:
+				frappe.reload_doc("dock_menu", "workspace", name, force=True)
+			except Exception:
+				frappe.log_error(title=f"dock_menu: could not load workspace {name}")
+	frappe.clear_cache()

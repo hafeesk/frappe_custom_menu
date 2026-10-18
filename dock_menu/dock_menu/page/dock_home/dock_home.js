@@ -90,10 +90,18 @@ function refresh_view(page) {
 	(dm.ready || Promise.resolve(null)).then(() => {
 		if (page.view !== seg) return;
 		const it = dm.item_of_path && dm.item_of_path(decodeURIComponent(window.location.pathname).replace(/\/+$/, ""));
-		if (!it) return $v.html(`<div class="dmh-empty">${__("This workspace is not available to you.")}</div>`);
+		if (!it) {
+			// an old or foreign address (another site, a renamed workspace): open the first workspace instead
+			const first = dm.items && dm.items()[0];
+			if (first && dm.ws_route) {
+				(frappe.route_flags = frappe.route_flags || {}).replace_route = true;
+				return frappe.set_route(dm.ws_route(first.key));
+			}
+			return $v.html(`<div class="dmh-empty">${__("This workspace is not available to you.")}</div>`);
+		}
 		// a workspace page with its own shortcuts + link cards is drawn from them (v14 layout),
 		// whatever sidebar / saved layout the dock menu uses; otherwise the dock's menu
-		const own = it.workspace
+		const own = it.workspace && !(it.members && it.members.length)
 			? frappe.xcall("dock_menu.api.get_workspace_layout", { workspace: it.workspace }).catch(() => null)
 			: Promise.resolve(null);
 		// a dashboard opens directly, and so does a menu that is just one link
