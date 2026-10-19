@@ -89,7 +89,9 @@ function refresh_view(page) {
 	const dm = DM();
 	(dm.ready || Promise.resolve(null)).then(() => {
 		if (page.view !== seg) return;
-		const it = dm.item_of_path && dm.item_of_path(decodeURIComponent(window.location.pathname).replace(/\/+$/, ""));
+		// by the route, not the address: Frappe 16.5x may put a sidebar "shell" in front of the page in the URL
+		const it = (dm.item_of_seg && dm.item_of_seg(seg)) ||
+			(dm.item_of_path && dm.item_of_path(decodeURIComponent(window.location.pathname).replace(/\/+$/, "")));
 		if (!it) {
 			// an old or foreign address (another site, a renamed workspace): open the first workspace instead
 			const first = dm.items && dm.items()[0];

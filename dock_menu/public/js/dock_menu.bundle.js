@@ -55,8 +55,23 @@
 	const color_of = (it) => it.color || PALETTE[hash(it.label) % PALETTE.length];
 	const is_emoji = (s) => !!s && !/^[a-z0-9-]+$/i.test(s);
 	// a private workspace can be addressed by full name or by title (newer v16 rewrites to the title)
+	// Frappe 16.5x writes the sidebar "shell" (module) into the address: /desk/<shell>/dock-home/x,
+	// /desk/<shell>/<workspace>. Everything here compares addresses without it.
+	const without_shell = (p) => {
+		const r = frappe.router;
+		try {
+			if (r && r.current_shell && typeof r.shell_slug === "function") {
+				const pre = "/desk/" + r.shell_slug(r.current_shell);
+				if (p === pre) return "/desk";
+				if (p.startsWith(pre + "/")) return "/desk/" + p.slice(pre.length + 1);
+			}
+		} catch (e) {
+			/* older router */
+		}
+		return p;
+	};
 	const path_now = () => {
-		const p = decodeURIComponent(window.location.pathname).replace(/\/+$/, "") || "/";
+		const p = without_shell(decodeURIComponent(window.location.pathname).replace(/\/+$/, "")) || "/";
 		const hit = ((S.cfg && S.cfg.landing) || []).find((x) => x.alias && (p === x.alias || p.startsWith(x.alias + "/")));
 		return hit ? hit.route + p.slice(hit.alias.length) : p;
 	};
@@ -1020,7 +1035,9 @@
 		ready: READY,
 		no_panel: NO_PANEL,
 		items: () => S.items,
-		item_of_path: (p) => S.items.find((x) => x.key === key_of_path(p)) || null,
+		item_of_path: (p) => S.items.find((x) => x.key === key_of_path(without_shell(p))) || null,
+		item_of_seg: (seg) => (seg ? S.items.find((x) => key_slug(x.key) === key_slug(seg)) || null : null),
+		path_now,
 		ws_route,
 		color: (it) => color_of(it),
 		menu: (key) => load_menu(key),
