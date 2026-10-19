@@ -190,19 +190,39 @@ def _allowed_workspaces() -> dict:
 			continue
 		if not w.get("public") and w.get("for_user") != user:
 			continue
+		own_app = w.get("module") == APP_MODULE
 		if w.get("public"):
 			need = ws_roles.get(w.name)
 			if need and not (need & roles):
 				continue
-			if w.get("module") and w.module in blocked:
+			if w.get("module") and w.module in blocked and not own_app:
 				continue
-		if frappe_allowed is not None and w.name not in frappe_allowed:
+		if own_app:
+			# shipped with this app (Operations): not tied to the "Dock Menu" module's permissions,
+			# shown to anyone who can open at least one of its links
+			if not _opens_something(w.name):
+				continue
+		elif frappe_allowed is not None and w.name not in frappe_allowed:
 			continue
 		w["title"] = w.get("title") or w.get("label") or w.name
 		w["public"] = int(bool(w.get("public")))
 		out[w.name] = w
 	frappe.local.dock_menu_ws = out
 	return out
+
+
+def _opens_something(workspace) -> bool:
+	try:
+		doc = frappe.get_cached_doc("Workspace", workspace)
+	except Exception:
+		return False
+	for s in doc.get("shortcuts") or []:
+		if _can((s.get("type") or "").lower(), s.get("link_to")):
+			return True
+	for l in doc.get("links") or []:
+		if l.get("type") != "Card Break" and _can((l.get("link_type") or "").lower(), l.get("link_to")):
+			return True
+	return False
 
 
 def _frappe_allowed_workspaces():
@@ -929,7 +949,7 @@ def _v14_scan() -> list[dict]:
 					pass
 			if w.get("restrict_to_domain") and domains is not None and w.restrict_to_domain not in domains:
 				reason = f"domain {w.restrict_to_domain} not active"
-			elif w.get("module") and w.module in blocked:
+			elif w.get("module") and w.module in blocked and w.module != APP_MODULE:
 				reason = f"module {w.module} blocked for user"
 			elif w.get("module") and w.module != APP_MODULE and w.module in doctype_modules and w.module not in allow_modules:
 				reason = f"module {w.module}: user cannot read any of its DocTypes"
