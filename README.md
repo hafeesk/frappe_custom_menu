@@ -71,3 +71,7 @@ bench --site <site> clear-cache && bench restart
 ```
 
 Note: don't enable this and `workspace_sidebar_menu` for the same users — both replace the desk sidebar.
+
+### Workspace page setting
+
+- Dock Menu Settings › Workspace page › **Group shortcuts by module**: on, shortcuts are grouped under their ERPNext module (Selling, Buying, Stock, Accounts, HR…); off (default), they follow the workspace page's own headings.

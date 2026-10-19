@@ -188,6 +188,8 @@ function draw_menu(page, it, m) {
 	// v14 layout: shortcuts on top, then link cards per module ("Reports & Masters"), each in its module's colour
 	// every workspace page gets the colourful layout; the two section headings only when it has both parts
 	const v14 = !!(quick.length && cards.length);
+	// Dock Menu Settings › "Group shortcuts by module": headings by ERPNext module instead of the page's own
+	const by_module = !!+((dm.settings && dm.settings().group_shortcuts_by_module) || 0);
 	page.$dmh.find(".dmh-view").html(`
 		<div class="dmh-ws dmh-v14" style="--dm-c:${dmh_esc(color || "")}">
 			<div class="dmh-ws-head">
@@ -197,7 +199,7 @@ function draw_menu(page, it, m) {
 			</div>
 			<div class="dmh-ws-find"><span class="dmh-search-icon">${dmh_icon("search")}</span>
 				<input type="search" placeholder="${__("Filter {0}", [dmh_esc(m.title || it.label)])}" aria-label="${__("Filter this menu")}" autocomplete="off"></div>
-			${quick_html(page, quick, v14)}
+			${quick_html(page, quick, v14 && !by_module, by_module)}
 			${cards.length && (v14 || m.cards_head) ? `<div class="dmh-sec-h">${dmh_icon("layout-grid", "xs")}<span>${dmh_esc(m.cards_head || __("Reports & Masters"))}</span></div>` : ""}
 			<div class="dmh-mgrid">${cards.map((c, i) => card_html(page, c, i, true)).join("")}</div>
 			${!quick.length && !cards.length ? `<div class="dmh-empty">${__("Nothing in this menu yet.")}</div>` : ""}
@@ -205,13 +207,14 @@ function draw_menu(page, it, m) {
 	page.$dmh.find(".dmh-mcard[data-lazy]").each((i, el) => load_card(page, el));
 	paint_cards(page);
 	paint_quick(page, quick);
+	if (by_module) group_quick(page, quick);
 }
 
 // shortcuts under the workspace page's own headings (the heading above them on the page), in page order;
 // without headings: one grid ("Your Shortcuts" when the page also has cards)
-function quick_html(page, quick, titled) {
+function quick_html(page, quick, titled, flat) {
 	if (!quick.length) return "";
-	if (!quick.some((l) => l.head)) {
+	if (flat || !quick.some((l) => l.head)) {
 		return `${titled ? `<div class="dmh-sec-h">${dmh_icon("zap", "xs")}<span>${__("Your Shortcuts")}</span></div>` : ""}
 			<div class="dmh-quick">${quick.map((l) => link_a(page, l, "dmh-qlink")).join("")}</div>`;
 	}

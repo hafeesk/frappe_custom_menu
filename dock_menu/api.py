@@ -50,6 +50,7 @@ DEFAULTS = {
 	"show_full_width": 1,
 	"show_notifications": 1,
 	"show_todo": 1,
+	"group_shortcuts_by_module": 0,
 }
 
 
@@ -1541,7 +1542,7 @@ def get_dock(path: str | None = None, key: str | None = None):
 		"is_manager": int(MANAGER in frappe.get_roles()),
 		"can_edit": int(_can_edit()),
 		"settings": {k: settings[k] for k in ("open_workspace_on_desk", "landing_page", "home_route", "dock_limit", "click_opens", "show_search", "show_full_width",
-			"show_notifications", "show_todo")},
+			"show_notifications", "show_todo", "group_shortcuts_by_module")},
 		"subtitle": _subtitle(settings),
 	}
 	items = _dock_items()

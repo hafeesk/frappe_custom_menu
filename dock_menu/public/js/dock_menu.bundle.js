@@ -1035,6 +1035,7 @@
 		ready: READY,
 		no_panel: NO_PANEL,
 		items: () => S.items,
+		settings: () => (S.cfg && S.cfg.settings) || {},
 		item_of_path: (p) => S.items.find((x) => x.key === key_of_path(without_shell(p))) || null,
 		item_of_seg: (seg) => (seg ? S.items.find((x) => key_slug(x.key) === key_slug(seg)) || null : null),
 		path_now,
